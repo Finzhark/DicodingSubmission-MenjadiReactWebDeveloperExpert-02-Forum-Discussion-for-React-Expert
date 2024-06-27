@@ -57,13 +57,14 @@ function DetailThread() {
 
   useEffect(() => {
     dispatch(getThreadDetailThunkAction(id));
-  }, []);
+  }, [dispatch, id]);
 
   useEffect(() => {
     if (created) {
       dispatch(getThreadDetailThunkAction(id));
     }
-  }, [created]);
+  }, [created, dispatch, id]);
+
   return (
     <div className="detail-thread">
       <h1>Detail Thread</h1>
@@ -80,14 +81,22 @@ function DetailThread() {
           </div>
           <p>{thread.body ? parse(thread.body) : ''}</p>
           <div className="among-button">
-            <p className="thumbs-only" onClick={() => handleUpVoteThread}>
+            <button
+              type="button"
+              className="thumbs-only"
+              onClick={() => handleUpVoteThread(thread.id)}
+            >
               <p>{thread.upVotesBy?.length}</p>
               <FaThumbsUp />
-            </p>
-            <p className="thumbs-only" onClick={() => handleDownVoteThread}>
+            </button>
+            <button
+              type="button"
+              className="thumbs-only"
+              onClick={() => handleDownVoteThread(thread.id)}
+            >
               <p>{thread.downVotesBy?.length}</p>
               <FaThumbsDown />
-            </p>
+            </button>
             <div className="thumbs-and-bubble">
               <p>{thread.comments?.length}</p>
               <FaCommentDots />

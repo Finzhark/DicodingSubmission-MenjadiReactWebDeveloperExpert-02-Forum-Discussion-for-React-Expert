@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Swal from 'sweetalert2';
 import api from '../../services/api';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
