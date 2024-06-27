@@ -1,34 +1,37 @@
 import { describe, expect, it } from 'vitest';
-import detailThreadReducer from './reducer'
+import detailThreadReducer from './reducer';
 
 describe('thread detail reducer', () => {
-  const initState = () => {
+  const initState = {
     thread: {},
     created: false,
   };
 
   it('should return the initial state', () => {
-    expect(detailThreadReducer(initState, {})).toEqual(initState);
-  })
+    expect(detailThreadReducer(undefined, {})).toEqual(initState);
+  });
 
   it('should handle "GET_THREAD"', () => {
-    expect(detailThreadReducer(initState, {
-      type: 'GET_THREAD',
-      payload: {
-        name: 'ohayou',
-      },
-    }),
+    expect(
+      detailThreadReducer(initState, {
+        type: 'GET_THREAD',
+        payload: {
+          name: 'ohayou',
+        },
+      }),
     ).toEqual({
       ...initState,
       thread: {
         name: 'ohayou',
-      }
+      },
     });
-  })
+  });
+
   it('should handle "COMMENT_CREATED"', () => {
-    expect(detailThreadReducer(initState, {
-      type: 'COMMENT_CREATED',
-    }),
+    expect(
+      detailThreadReducer(initState, {
+        type: 'COMMENT_CREATED',
+      }),
     ).toEqual({
       ...initState,
       created: true,
