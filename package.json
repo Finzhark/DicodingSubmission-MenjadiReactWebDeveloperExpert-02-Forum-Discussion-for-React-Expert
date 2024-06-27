@@ -13,6 +13,7 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^2.2.5",
+    "@testing-library/dom": "^10.2.0",
     "html-react-parser": "^5.1.10",
     "jsdom": "^24.1.0",
     "react": "^18.2.0",
