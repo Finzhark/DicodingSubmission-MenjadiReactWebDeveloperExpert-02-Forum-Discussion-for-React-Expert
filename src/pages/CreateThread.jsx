@@ -30,11 +30,25 @@ function CreateThread() {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Judul</label>
-          <input type="text" id="title" name="title" onChange={(event) => setTitle(event.target.value)} value={title} />
+          <input
+            type="text"
+            id="title"
+            name="title"
+            onChange={(event) => setTitle(event.target.value)}
+            value={title}
+            data-cy="title"
+          />
         </div>
         <div>
           <label htmlFor="body">Isinya apa?</label>
-          <textarea type="text" id="body" name="body" onChange={(event) => setBody(event.target.value)} value={body} />
+          <textarea
+            type="text"
+            id="body"
+            name="body"
+            onChange={(event) => setBody(event.target.value)}
+            value={body}
+            data-cy="body-thread"
+          />
         </div>
         <div>
           <label htmlFor="category">Kategori</label>
@@ -44,9 +58,15 @@ function CreateThread() {
             name="category"
             onChange={(event) => setCategory(event.target.value)}
             value={category}
+            data-cy="category"
           />
         </div>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          data-cy="button-create-thread"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

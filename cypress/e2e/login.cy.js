@@ -1,7 +1,6 @@
 describe('Login', () => {
   it('it should email or password not be empty', () => {
     cy.once('uncaught:exception', () => false);
-
     cy.visit('http://localhost:5173/');
     cy.get('[data-cy=login]').click();
     cy.get('[data-cy=button-login]').click();
@@ -37,6 +36,11 @@ describe('Login', () => {
     cy.get('[data-cy=email]').type('e242090@dicoding.org');
     cy.get('[data-cy=password]').type('testing');
     cy.get('[data-cy=button-login]').click();
-    cy.get('[data-cy=logout]').click();
+    cy.on('window:alert', (text) => {
+      expect(text).to.equal('Login Success');
+      expect(text).to.equal('Ok');
+    });
+    cy.wait(500);
+    cy.get('[data-cy=logout]').click({ force: true });
   });
 });

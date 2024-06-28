@@ -59,7 +59,12 @@ function Homepage() {
       <div>
         {threads.map((thread) => (
           <div className="discuss-box" key={thread.id}>
-            <h1 onClick={() => handleDetail(thread.id)} style={{ cursor: 'pointer' }}>{thread.title}</h1>
+            <h1
+              onClick={() => handleDetail(thread.id)}
+              style={{ cursor: 'pointer' }}
+            >
+              {thread.title}
+            </h1>
             <div className="user-info">
               <img src={users.find((user) => user.id === thread.ownerId).avatar} />
               <div className="user-info-detail">
@@ -68,11 +73,17 @@ function Homepage() {
               </div>
             </div>
             <div className="among-button">
-              <p className="thumbs-and-bubble" onClick={() => handleUpVoteThread(thread.id)}>
+              <p
+                className="thumbs-and-bubble"
+                onClick={() => handleUpVoteThread(thread.id)}
+              >
                 <p>{thread.upVotesBy.length}</p>
                 <FaThumbsUp />
               </p>
-              <p className="thumbs-and-bubble" onClick={() => handleDownVoteThread(thread.id)}>
+              <p
+                className="thumbs-and-bubble"
+                onClick={() => handleDownVoteThread(thread.id)}
+              >
                 <p>{thread.downVotesBy.length}</p>
                 <FaThumbsDown />
               </p>
@@ -84,7 +95,15 @@ function Homepage() {
             <p>{parse(thread.body)}</p>
           </div>
         ))}
-        {isLogin && <Link to="/create" className="add-thread">Tambah Thread</Link>}
+        {isLogin && (
+          <Link
+            to="/create"
+            className="add-thread"
+            data-cy="add-thread"
+          >
+            Tambah Thread
+          </Link>
+        )}
       </div>
     </div>
   );

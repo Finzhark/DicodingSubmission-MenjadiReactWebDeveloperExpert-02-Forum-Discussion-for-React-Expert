@@ -23,15 +23,29 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">email</label>
-          <input type="text" id="email" name="email" onChange={(event) => setEmail(event.target.value)} value={email} />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
+            data-cy="email"
+          />
         </div>
         <div>
           <label htmlFor="password">password</label>
-          <input type="password" id="password" name="password" onChange={(event) => setPassword(event.target.value)} value={password} />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+            data-cy="password"
+          />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" data-cy="button-login">Login</button>
       </form>
-      <Link to="/register">Register</Link>
+      <Link to="/register" data-cy="register">Register</Link>
     </div>
   );
 }

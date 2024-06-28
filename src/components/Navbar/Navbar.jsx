@@ -19,14 +19,39 @@ function Navbar() {
   return (
     <div>
       <div className="navbar">
-        <Link to="/">Forum Discussion for React Expert</Link>
+        <Link to="/">
+          Forum Discussion for React Expert
+        </Link>
         <div className="navbar-info">
-          <Link to="/leaderboards">Leaderboard</Link>
+          <Link to="/leaderboards">
+            Leaderboard
+          </Link>
           <div className="navbar-user-info">
-            <img src={profile.avatar} alt="User Avatar" />
+            <img
+              src={profile.avatar}
+              alt="User Avatar"
+            />
             <p>{profile.name}</p>
           </div>
-          {isLogin ? <button onClick={handleLogout} type="button">Logout</button> : <Link to="/login">Login</Link>}
+          {isLogin
+            ? (
+              <button
+                onClick={handleLogout}
+                type="button"
+                data-cy="logout"
+              >
+                Logout
+              </button>
+            )
+            : (
+              <Link
+                to="/login"
+                data-cy="login"
+              >
+                Login
+              </Link>
+
+            )}
         </div>
       </div>
     </div>
