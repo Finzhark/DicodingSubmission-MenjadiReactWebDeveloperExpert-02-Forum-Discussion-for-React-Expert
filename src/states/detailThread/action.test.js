@@ -6,14 +6,14 @@ import api from '../../services/api';
 
 describe('detail thread action', () => {
   it('get detail thread action', async () => {
-    vitest.spyOn(api, 'getThreadDetail').mockReturnValue({
+    vitest.spyOn(api, 'getThreadDetail').mockReturnValue(Promise.resolve({
       name: 'ohayou',
-    });
+    }));
     const dispatch = vitest.fn();
 
     await getThreadDetailThunkAction(100)(dispatch);
 
-    expect(api.getThreadDetail()).resolves.toBeTruthy();
+    await expect(api.getThreadDetail()).resolves.toBeTruthy();
     expect(dispatch).toHaveBeenCalled();
     expect(dispatch).toHaveBeenCalledWith({
       type: 'GET_THREAD',
@@ -24,7 +24,7 @@ describe('detail thread action', () => {
   });
 
   it('create comment action', async () => {
-    vitest.spyOn(api, 'createComment').mockReturnValue(({}));
+    vitest.spyOn(api, 'createComment').mockReturnValue(Promise.resolve({}));
     const dispatch = vitest.fn();
 
     await createCommentThunkAction({
@@ -32,7 +32,7 @@ describe('detail thread action', () => {
       content: 'ohayou',
     })(dispatch);
 
-    expect(api.createComment()).resolves.toBeTruthy();
+    await expect(api.createComment()).resolves.toBeTruthy();
     expect(dispatch).toHaveBeenCalled();
   });
 });
