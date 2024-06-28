@@ -3,7 +3,7 @@ import {
 } from 'vitest';
 import { getProfileThunkAction, handleLoginThunkAction, handleRegisterThunkAction } from './action';
 import api from '../../services/api';
-import { hideLoading } from 'react-redux-loading-bar';
+import { showLoading } from 'react-redux-loading-bar';
 
 describe('auth action', () => {
   it('handle login thunk action', async () => {
@@ -34,7 +34,7 @@ describe('auth action', () => {
 
     await expect(api.register()).resolves.toBeTruthy();
     expect(dispatch).toHaveBeenCalled();
-    expect(dispatch).toHaveBeenCalledWith(hideLoading);
+    expect(dispatch).toHaveBeenCalledWith(showLoading);
   });
 
   it('get profile thunk action', async () => {
