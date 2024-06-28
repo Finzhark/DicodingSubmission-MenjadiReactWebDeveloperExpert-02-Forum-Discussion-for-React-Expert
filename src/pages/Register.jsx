@@ -23,14 +23,41 @@ function Register() {
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">name</label>
-        <input type="text" id="name" name="name" onChange={(event) => setName(event.target.value)} value={name} />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          onChange={(event) => setName(event.target.value)}
+          value={name}
+        />
         <label htmlFor="email">email</label>
-        <input type="email" id="email" name="email" onChange={(event) => setEmail(event.target.value)} value={email} />
-        <label htmlFor="password">password</label>
-        <input type="password" id="password" name="password" onChange={(event) => setPassword(event.target.value)} value={password} />
-        <button type="submit">Register</button>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          onChange={(event) => setEmail(event.target.value)}
+          value={email}
+        />
+        <label
+          htmlFor="password"
+        >
+          password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          onChange={(event) => setPassword(event.target.value)}
+          value={password}
+        />
+        <button
+          type="submit"
+          data-cy="button-register"
+        >
+          Register
+        </button>
       </form>
-      <Link to="/login">Login</Link>
+      <Link to="/login" data-cy="login">Login</Link>
     </div>
   );
 }
