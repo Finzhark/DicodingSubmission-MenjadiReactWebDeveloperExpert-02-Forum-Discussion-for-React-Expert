@@ -33,25 +33,6 @@ function Navbar() {
             />
             <p>{profile.name}</p>
           </div>
-          {isLogin
-            ? (
-              <button
-                onClick={handleLogout}
-                type="button"
-                data-cy="logout"
-              >
-                Logout
-              </button>
-            )
-            : (
-              <Link
-                to="/login"
-                data-cy="login"
-              >
-                Login
-              </Link>
-
-            )}
         </div>
       </div>
     </div>
