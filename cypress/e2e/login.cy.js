@@ -66,7 +66,7 @@ describe('Login', () => {
     cy.on('window:alert', (text) => {
       expect(text).to.equal('Login Success');
     });
-    cy.wait(500)
+    cy.wait(500);
     cy.get('button').contains('OK').click();
     cy.wait(5000);
     cy.get('[data-cy=logout]').click({ force: true });
