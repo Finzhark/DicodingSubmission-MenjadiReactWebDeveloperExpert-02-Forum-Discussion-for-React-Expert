@@ -21,7 +21,6 @@
 
 a {
   font-weight: 500;
-  color: white;
   text-decoration: inherit;
 }
 
@@ -90,16 +89,16 @@ button:focus-visible {
   .discuss-box, .navbar, .comment-box {
     background-color: rgba(240,240,240,1);
   }
-
-  .link {
-    color: white
-  }
 }
 
 @media (prefers-color-scheme: dark) {
   .navbar {
     background-color: #242424;
     border-bottom: 3px solid #f9f9f9;
+  }
+
+  a {
+    color: white;
   }
 
   .discuss-box {
@@ -117,6 +116,7 @@ button:focus-visible {
   gap: 10px;
   top: 0;
   padding: 1rem 3rem;
+  color: #000;
 }
 
 .navbar-info {
