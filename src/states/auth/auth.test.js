@@ -1,15 +1,3 @@
-/**
- * skenario test
- *
- * - auth action
- *   - handle login thunk action
- *     - should dispatch LOGIN_SUCCESS action when login is successful
- *   - handle register thunk action
- *     - should dispatch REGISTER_SUCCESS action when registration is successful
- *   - get profile thunk action
- *     - should dispatch SET_PROFILE action when fetching profile is successful
- */
-
 import {
   vitest, describe, expect, it,
 } from 'vitest';
@@ -19,7 +7,7 @@ import api from '../../services/api';
 
 describe('auth action', () => {
   it('handle login thunk action', async () => {
-    vitest.spyOn(api, 'logan').mockResolvedValue({});
+    vitest.spyOn(api, 'login').mockResolvedValue({});
     await expect(api.login()).resolves.toBeTruthy();
     const dispatch = vitest.fn();
 
@@ -29,9 +17,9 @@ describe('auth action', () => {
     })(dispatch);
 
     expect(dispatch).toHaveBeenCalled();
-    // expect(dispatch).toHaveBeenCalledWith({
-    //   type: 'LOGIN_SUCCESS',
-    // });
+    expect(dispatch).toHaveBeenCalledWith({
+      type: 'LOGIN_SUCCESS',
+    });
   });
 
   it('handle register thunk action', async () => {
@@ -51,7 +39,7 @@ describe('auth action', () => {
 
   it('get profile thunk action', async () => {
     vitest.spyOn(api, 'getOwnProfile').mockResolvedValue({});
-    const dispuatch = vitest.fn();
+    const dispatch = vitest.fn();
 
     await getProfileThunkAction()(dispatch);
 

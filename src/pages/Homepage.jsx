@@ -54,7 +54,7 @@ function Homepage() {
     dispatch(getThreadsAndUsersThunkAction());
   }, []);
   return (
-    // <div className="homepage">
+    <div className="homepage">
       <h1>Forum Discussion</h1>
       <div>
         {threads.map((thread) => (
