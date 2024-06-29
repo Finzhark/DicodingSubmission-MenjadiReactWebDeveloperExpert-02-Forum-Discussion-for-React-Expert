@@ -1,13 +1,3 @@
-/**
- * skenario test
- *
- * - detailThreadAction
- *   - get detail thread action
- *     - should dispatch action correctly when data fetching success
- *   - create comment action
- *     - should dispatch action correctly when creating comment
- */
-
 const initState = {
   thread: {},
   created: false,
