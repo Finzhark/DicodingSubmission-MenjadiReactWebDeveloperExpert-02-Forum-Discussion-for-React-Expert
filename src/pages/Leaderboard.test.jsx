@@ -1,3 +1,11 @@
+/**
+ * sekenario test
+ *
+ * - Leaderboards
+ *   - should render correctly
+ *   - should display leaderboard data after loading
+ */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';

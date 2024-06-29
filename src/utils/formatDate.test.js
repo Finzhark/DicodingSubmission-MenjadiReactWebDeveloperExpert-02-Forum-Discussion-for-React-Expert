@@ -2,7 +2,7 @@
  * skenario test
  *
  * - formatDate
- *   - should format date correctly
+ *   - should format date correctly (Sabtu, 01 Januari 2022 10:10)
  */
 
 import { describe, expect, it } from 'vitest';

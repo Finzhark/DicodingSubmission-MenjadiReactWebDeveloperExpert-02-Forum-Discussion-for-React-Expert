@@ -1,3 +1,13 @@
+/**
+ * skenario test
+ *
+ * - Navbar
+ *   - should render correctly
+ *   - should contain expected links
+ *   - should show logged in user when user is logged in
+ *   - should show login button when user is not logged in
+ */
+
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
