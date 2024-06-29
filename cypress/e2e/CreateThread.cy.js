@@ -11,6 +11,7 @@
  *     - click on add thread button
  *     - enter title, body, and category for the new thread
  *     - click on create thread button
+ *     - wait for page to load and ensure add thread button is visible
  *     - logout after creating thread
  */
 
@@ -34,6 +35,7 @@ describe('CreateThread', () => {
     cy.get('[data-cy=category]').type('Halusin Nasi');
     cy.get('[data-cy=button-create-thread]').click();
     cy.wait(3000);
+    cy.contains('Ohayou Gozaimasu').should('exist');
     cy.get('[data-cy=logout]').click({ force: true });
   });
 });
