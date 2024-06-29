@@ -21,7 +21,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: white;
   text-decoration: inherit;
 }
 
@@ -89,6 +89,10 @@ button:focus-visible {
 
   .discuss-box, .navbar, .comment-box {
     background-color: rgba(240,240,240,1);
+  }
+
+  .link {
+    color: white
   }
 }
 
@@ -184,13 +188,19 @@ button:focus-visible {
   min-height: 100vh; 
 }
 
+.login-page > form, .register-page > form, .create-thread > form {
+  background-color: #66b3f1;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 input {
   width: 100%;
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f9f9f9;
 }
 
 form {

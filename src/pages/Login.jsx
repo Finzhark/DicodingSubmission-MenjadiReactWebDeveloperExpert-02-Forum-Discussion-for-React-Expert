@@ -44,8 +44,8 @@ function Login() {
           />
         </div>
         <button type="submit" data-cy="button-login">Login</button>
+        <Link to="/register" data-cy="register">Register</Link>
       </form>
-      <Link to="/register" data-cy="register">Register</Link>
     </div>
   );
 }
