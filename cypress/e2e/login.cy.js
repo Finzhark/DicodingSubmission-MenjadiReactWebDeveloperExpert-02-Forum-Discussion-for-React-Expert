@@ -1,3 +1,30 @@
+/**
+ * skenario test
+ *
+ * - Login
+ *   - should email or password not be empty
+ *     - visit the homepage
+ *     - click on login button
+ *     - click on login button without entering email or password
+ *   - should password not be empty
+ *     - visit the homepage
+ *     - click on login button
+ *     - enter email
+ *     - click on login button without entering password
+ *   - should email or password wrong
+ *     - visit the homepage
+ *     - click on login button
+ *     - enter incorrect email or password
+ *     - click on login button
+ *   - should login successfully
+ *     - visit the homepage
+ *     - click on login button
+ *     - enter correct email and password
+ *     - click on login button
+ *     - verify success message
+ *     - logout
+ */
+
 describe('Login', () => {
   it('it should email or password not be empty', () => {
     cy.once('uncaught:exception', () => false);
@@ -38,9 +65,11 @@ describe('Login', () => {
     cy.get('[data-cy=button-login]').click();
     cy.on('window:alert', (text) => {
       expect(text).to.equal('Login Success');
-      expect(text).to.equal('Ok');
     });
-    cy.wait(500);
+    cy.wait(500)
+    cy.get('button').contains('OK').click();
+    cy.wait(5000);
     cy.get('[data-cy=logout]').click({ force: true });
+    cy.wait(5000);
   });
 });

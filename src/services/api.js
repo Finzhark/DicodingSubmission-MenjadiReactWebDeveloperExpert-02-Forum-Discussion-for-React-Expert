@@ -19,9 +19,9 @@ const api = (() => {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Login dulu bos',
+        text: 'Login dulu Pak BOS',
       });
-      throw new Error('Login dulu bos');
+      throw new Error('Login dulu Pak BOS');
     }
     return fetch(url, {
       ...options,
