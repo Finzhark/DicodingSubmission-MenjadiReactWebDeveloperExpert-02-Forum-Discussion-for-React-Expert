@@ -1,3 +1,15 @@
+/**
+ * skenario test
+ *
+ * - detail thread action
+ *   - get detail thread action
+ *     - should dispatch action correctly when data fetching success
+ *     - should handle errors correctly when data fetching fails
+ *   - create comment action
+ *     - should dispatch action correctly when creating comment
+ *     - should handle errors correctly when creating comment fails
+ */
+
 import {
   vitest, describe, expect, it,
 } from 'vitest';
