@@ -1,3 +1,10 @@
+/**
+ * skenario test
+ *
+ * - formatDate
+ *   - should format date correctly
+ */
+
 import { describe, expect, it } from 'vitest';
 import formatDate from './formatdate.js';
 

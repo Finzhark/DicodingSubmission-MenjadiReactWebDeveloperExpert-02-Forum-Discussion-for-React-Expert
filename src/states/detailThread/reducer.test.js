@@ -1,3 +1,12 @@
+/**
+ * skenario test
+ *
+ * - detailThreadReducer
+ *   - should return the initial state
+ *   - should handle "GET_THREAD"
+ *   - should handle "COMMENT_CREATED"
+ */
+
 import { describe, expect, it } from 'vitest';
 import detailThreadReducer from './reducer';
 
