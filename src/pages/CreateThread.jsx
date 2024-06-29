@@ -13,7 +13,7 @@ function CreateThread() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createThreadThunkAction({ title, body, category }));
+    // dispatch(createThreadThunkAction({ title, body, category }));
   };
 
   useEffect(() => {
@@ -21,9 +21,10 @@ function CreateThread() {
     setBody('');
     setCategory('');
     if (created) {
-      navigate('/');
+      // navigate('/');
     }
-  }, [created]);
+  }, [category]);
+
   return (
     <div className="create-thread">
       <h1>Membuat Thread Baru</h1>

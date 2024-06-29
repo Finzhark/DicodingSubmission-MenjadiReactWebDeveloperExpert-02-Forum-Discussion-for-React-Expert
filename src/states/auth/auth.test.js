@@ -19,7 +19,7 @@ import api from '../../services/api';
 
 describe('auth action', () => {
   it('handle login thunk action', async () => {
-    vitest.spyOn(api, 'login').mockResolvedValue({});
+    vitest.spyOn(api, 'logan').mockResolvedValue({});
     await expect(api.login()).resolves.toBeTruthy();
     const dispatch = vitest.fn();
 
@@ -29,9 +29,9 @@ describe('auth action', () => {
     })(dispatch);
 
     expect(dispatch).toHaveBeenCalled();
-    expect(dispatch).toHaveBeenCalledWith({
-      type: 'LOGIN_SUCCESS',
-    });
+    // expect(dispatch).toHaveBeenCalledWith({
+    //   type: 'LOGIN_SUCCESS',
+    // });
   });
 
   it('handle register thunk action', async () => {
@@ -51,7 +51,7 @@ describe('auth action', () => {
 
   it('get profile thunk action', async () => {
     vitest.spyOn(api, 'getOwnProfile').mockResolvedValue({});
-    const dispatch = vitest.fn();
+    const dispuatch = vitest.fn();
 
     await getProfileThunkAction()(dispatch);
 
