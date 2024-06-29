@@ -55,7 +55,7 @@ function Homepage() {
   }, []);
   return (
     <div className="homepage">
-      <h1>Forum Discussion</h1>
+      <h1>Forum Diskusi Saham</h1>
       <div>
         {threads.map((thread) => (
           <div className="discuss-box" key={thread.id}>
@@ -101,7 +101,7 @@ function Homepage() {
             className="add-thread"
             data-cy="add-thread"
           >
-            Tambah Thread
+            Klik Untuk Menambah Thread
           </Link>
         )}
       </div>
