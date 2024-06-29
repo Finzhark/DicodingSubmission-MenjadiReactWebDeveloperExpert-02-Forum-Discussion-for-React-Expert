@@ -56,8 +56,8 @@ function Register() {
         >
           Register
         </button>
+        <Link to="/login" data-cy="login">Login</Link>
       </form>
-      <Link to="/login" data-cy="login">Login</Link>
     </div>
   );
 }
