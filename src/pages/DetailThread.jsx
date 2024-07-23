@@ -68,67 +68,6 @@ function DetailThread() {
   return (
     <div className="detail-thread">
       <h1>Detail Thread</h1>
-      {thread && (
-        <div>
-          <p className="category">{thread.category}</p>
-          <h1>{thread.title}</h1>
-          <div className="user-info">
-            <img src={thread.owner?.avatar} alt="" />
-            <div className="user-info-detail">
-              <p>{thread.owner?.name}</p>
-              <p>{formatDate(thread.createdAt)}</p>
-            </div>
-          </div>
-          <p>{thread.body ? parse(thread.body) : ''}</p>
-          <div className="among-button">
-            <button
-              type="button"
-              className="thumbs-only"
-              onClick={() => handleUpVoteThread(thread.id)}
-            >
-              <p>{thread.upVotesBy?.length}</p>
-              <FaThumbsUp />
-            </button>
-            <button
-              type="button"
-              className="thumbs-only"
-              onClick={() => handleDownVoteThread(thread.id)}
-            >
-              <p>{thread.downVotesBy?.length}</p>
-              <FaThumbsDown />
-            </button>
-            <div className="thumbs-and-bubble">
-              <p>{thread.comments?.length}</p>
-              <FaCommentDots />
-            </div>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <textarea
-              name="content"
-              id="content"
-              cols="30"
-              rows="10"
-              value={content}
-              onChange={(event) => setContent(event.target.value)}
-            />
-            <button type="submit">
-              Comment
-            </button>
-          </form>
-          {thread.comments?.map((comment) => (
-            <div key={comment.id} className="comment-box">
-              <div className="user-info">
-                <img src={comment.owner?.avatar} alt="" />
-                <div className="user-info-detail">
-                  <p>{comment.owner?.name}</p>
-                  <p>{formatDate(comment.createdAt)}</p>
-                </div>
-              </div>
-              <p>{comment.content}</p>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   );
 }
