@@ -1,17 +1,17 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { handleLoginThunkAction } from '../states/auth/action';
+import { useSelector } from 'react-redux';
+// import { handleLoginThunkAction } from '../states/auth/action';
 import { Link, Navigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { isLogin } = useSelector((state) => state.auth);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(handleLoginThunkAction({ email, password }));
+    // dispatch(handleLoginThunkAction({ email, password }));
   };
 
   if (isLogin) {

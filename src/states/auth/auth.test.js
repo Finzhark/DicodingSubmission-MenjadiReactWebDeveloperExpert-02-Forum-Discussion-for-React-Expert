@@ -1,15 +1,3 @@
-/**
- * skenario test
- *
- * - auth action
- *   - handle login thunk action
- *     - should dispatch LOGIN_SUCCESS action when login is successful
- *   - handle register thunk action
- *     - should dispatch REGISTER_SUCCESS action when registration is successful
- *   - get profile thunk action
- *     - should dispatch SET_PROFILE action when fetching profile is successful
- */
-
 import {
   vitest, describe, expect, it,
 } from 'vitest';

@@ -13,7 +13,7 @@ function CreateThread() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createThreadThunkAction({ title, body, category }));
+    zdispatch(createThreadThunkAction({ title, body, category }));
   };
 
   useEffect(() => {
